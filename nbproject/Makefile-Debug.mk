@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/mp.o
+	${OBJECTDIR}/src/mp.o \
+	${OBJECTDIR}/src/read_dir_and_list.o
 
 
 # C Compiler Flags
@@ -66,6 +67,11 @@ ${OBJECTDIR}/src/mp.o: src/mp.cc
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/mp.o src/mp.cc
+
+${OBJECTDIR}/src/read_dir_and_list.o: src/read_dir_and_list.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/read_dir_and_list.o src/read_dir_and_list.cpp
 
 # Subprojects
 .build-subprojects:
